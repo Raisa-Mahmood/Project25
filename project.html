@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 100px;
+            align-items: center;
+            justify-content: center;
+            max-width: 700px;
+            height: 100vh;
+            background: linear-gradient(azure, aliceblue);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            word-spacing: 2px;
+            letter-spacing: 1px;
+        }
+
+        button {
+            margin: 5px;
+            margin-right: 8px;
+            padding: 4px;
+            background-color: lavender;
+            font-weight: bolder;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        div {
+            padding: 5px;
+            background-color: lavender;
+            color: darkslateblue;
+            height: fit-content;
+            width: fit-content;
+
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Project from lesson 27</h2>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <button onclick="ascending()">The Ascending Order of Original</button>
+        <button onclick="descending()">The Descending Order of Original</button>
+        <button onclick="ascending2()">The Ascending Order of Mapped array</button>
+        <button onclick="descending2()">The Descending Order of Mapped array</button>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+        <p id="p6"></p>
+    </div>
+    <script>
+        var array1 = [2, 4, 6, 8, 9, 23, 67, 11, 23, 98, 67, 0, 46, 52, 21]
+        document.getElementById("p1").innerHTML = "The original array is " + array1;
+
+        function product(a) {
+            return a * 2;
+        }
+        array2 = array1.map(product);
+        document.getElementById("p2").innerHTML = "The mapped array is " + array2;
+
+        function ascending() {
+            document.getElementById("p3").innerHTML = "The Ascending Order is " + array1.sort(function (a, b) { return a - b });
+        }
+        function descending() {
+            document.getElementById("p4").innerHTML = "The Descending Order is " + array1.sort(function (a, b) { return b - a });
+        }
+        function ascending2() {
+            document.getElementById("p5").innerHTML = "The Ascending Order of Mapped array is " + array2.sort(function (a, b) { return a - b });
+        }
+        function descending2() {
+            document.getElementById("p6").innerHTML = "The Descending Order of Mapped array is " + array2.sort(function (a, b) { return b - a });
+        }
+    </script>
+</body>
+
+</html>
